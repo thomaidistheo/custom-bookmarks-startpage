@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Startpage</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.ico"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Search Input -->
+        <form class="search-form" action="http://www.google.com/search" method="get">
+            <input 
+                type="text" 
+                name="q" 
+                autocomplete="off" 
+                placeholder="Search"
+            />
+        </form>
+
+        <div class="container--bookmarks">
+            <!-- Header and Button -->
+            <div class="bookmarks--header">
+                <h1 class="bookmarks--title">Bookmarks</h1>
+                <button class="new-bookmark-btn"> <svg fill="#707070" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><path fill-rule="evenodd" d="M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z"/></svg> </button>
+                <button class="new-bookmark-btn-done not-visible">Done</button>
+                <!-- New Bookmark  -->
+                <div class="new-bookmark-container not-visible">
+                    <form onsubmit="handleSubmit(event)">
+                        <input 
+                            type="text"
+                            name="newBookmark"
+                            placeholder= "Insert website name and press Enter ↵"
+                            id="newInput"
+                            autocomplete="off"
+                        />
+                    </form>
+                </div>
+            </div>
+            <!-- Bookmarks -->
+            <div class="bookmarks--list">
+                <ul id="bookmarkList">
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="clear">remove all</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
